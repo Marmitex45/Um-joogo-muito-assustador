@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbt6pm8da72ux"]
+
+[ext_resource type="Script" uid="uid://dfwby14hotn02" path="res://scripts/inimigo_1.gd" id="1_50o7s"]
+[ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="2_34lmg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt7c7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_34lmg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_34lmg")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su1cs"]
+size = Vector2(126, 124)
+
+[node name="Inimigo1" type="CharacterBody2D"]
+script = ExtResource("1_50o7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pt7c7")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_su1cs")

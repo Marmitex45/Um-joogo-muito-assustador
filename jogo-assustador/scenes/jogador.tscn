@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4ehg6g7u1nan"]
+
+[ext_resource type="Script" uid="uid://wb5k6tl6gmxr" path="res://scripts/jogador.gd" id="1_vwxko"]
+[ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="2_uahlj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1ob3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uahlj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uahlj")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uahlj"]
+size = Vector2(113, 117)
+
+[node name="Jogador" type="CharacterBody2D"]
+script = ExtResource("1_vwxko")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g1ob3")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_uahlj")
+
+[node name="Camera2D" type="Camera2D" parent="."]

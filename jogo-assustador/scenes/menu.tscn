@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgi17u7g8rsx8"]
+
+[ext_resource type="Script" uid="uid://75hon8csosb8" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yqeox"]
+color = Color(1, 1, 1, 1)
+thickness = 4
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = -7.0
+offset_right = 61.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="Botoes" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 1000)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 226.0
+offset_right = 104.0
+offset_bottom = 1226.0
+theme_override_constants/separation = 75
+
+[node name="Jogar" type="Button" parent="Botoes"]
+clip_contents = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+text = "Jogar"
+
+[node name="BotaoOpçoes" type="Button" parent="Botoes"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Opçoes"
+
+[node name="Sair" type="Button" parent="Botoes"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Sair"
+
+[node name="Opçoes" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 40.0
+offset_right = 1063.0
+offset_bottom = 628.0
+
+[node name="Label" type="Label" parent="Opçoes"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 15.0
+offset_right = 452.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 40
+text = "Opçoes"
+
+[node name="Voltar" type="Button" parent="Opçoes"]
+layout_mode = 0
+offset_left = -254.0
+offset_top = 267.0
+offset_right = -77.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 50
+text = "Voltar"
+
+[node name="HSlider" type="HSlider" parent="Opçoes"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 119.0
+offset_right = 709.0
+offset_bottom = 169.0
+theme_override_styles/slider = SubResource("StyleBoxLine_yqeox")
+value = 50.0
+
+[node name="TelaCheia" type="CheckButton" parent="Opçoes"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 185.0
+offset_right = 140.0
+offset_bottom = 237.0
+text = "Tela cheia"
+
+[connection signal="pressed" from="Botoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botoes/BotaoOpçoes" to="." method="_on_opçoes_pressed"]
+[connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Opçoes/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="toggled" from="Opçoes/TelaCheia" to="." method="_on_tela_cheia_toggled"]
