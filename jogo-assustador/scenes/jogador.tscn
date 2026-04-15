@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4ehg6g7u1nan"]
+[gd_scene format=3 uid="uid://b4ehg6g7u1nan"]
 
 [ext_resource type="Script" uid="uid://wb5k6tl6gmxr" path="res://scripts/jogador.gd" id="1_vwxko"]
+[ext_resource type="PackedScene" uid="uid://rc84504kb4mg" path="res://scenes/bala.tscn" id="2_s760d"]
 [ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="2_uahlj"]
+[ext_resource type="Texture2D" uid="uid://m1ri14ud5fjx" path="res://Assets/pixil-frame-0.png" id="3_g1ob3"]
+[ext_resource type="PackedScene" uid="uid://c8r8k35k5uqud" path="res://scenes/arma.tscn" id="4_32758"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1ob3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uahlj")
+}],
+"loop": true,
+"name": &"Damage",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_uahlj")
@@ -25,15 +36,57 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uahlj"]
 size = Vector2(113, 117)
 
-[node name="Jogador" type="CharacterBody2D"]
+[node name="Jogador" type="CharacterBody2D" unique_id=1466795784]
 script = ExtResource("1_vwxko")
+projetil = ExtResource("2_s760d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1890363]
 sprite_frames = SubResource("SpriteFrames_g1ob3")
-animation = &"Idle"
+animation = &"Damage"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Arma" parent="AnimatedSprite2D" unique_id=2026371969 instance=ExtResource("4_32758")]
+position = Vector2(78, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893049537]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_uahlj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1549837392]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1095915995]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1774181087]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Coraçao" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=923986674]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Coraçao" unique_id=1478138515]
+texture_filter = 1
+position = Vector2(98, 69)
+scale = Vector2(6, 6)
+texture = ExtResource("3_g1ob3")
+
+[node name="Coraçao3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=236555046]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Coraçao3" unique_id=494562784]
+texture_filter = 1
+position = Vector2(98, 69)
+scale = Vector2(6, 6)
+texture = ExtResource("3_g1ob3")
+
+[node name="Coraçao2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1265224014]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Coraçao2" unique_id=1127260919]
+texture_filter = 1
+position = Vector2(98, 69)
+scale = Vector2(6, 6)
+texture = ExtResource("3_g1ob3")
+
+[node name="Emissorbala" type="Marker2D" parent="." unique_id=945531631]
+position = Vector2(133, -2)

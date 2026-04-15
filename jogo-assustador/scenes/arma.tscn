@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c8r8k35k5uqud"]
+
+[ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="1_0fmgw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rh7jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0fmgw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0fmgw")
+}],
+"loop": true,
+"name": &"recarregando",
+"speed": 5.0
+}]
+
+[node name="Arma" type="Node2D" unique_id=2026371969]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=185782742]
+sprite_frames = SubResource("SpriteFrames_rh7jv")
