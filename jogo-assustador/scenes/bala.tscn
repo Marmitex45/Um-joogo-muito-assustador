@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://rc84504kb4mg"]
 
 [ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="1_27eus"]
+[ext_resource type="Script" uid="uid://bk824vxqffo55" path="res://scenes/bala.gd" id="1_uu6iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6iy"]
-size = Vector2(74, 73)
+size = Vector2(43, 36)
 
 [node name="Bala" type="Node2D" unique_id=752983069]
+script = ExtResource("1_uu6iy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055746733]
+scale = Vector2(0.3515625, 0.296875)
 texture = ExtResource("1_27eus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874670036]
-position = Vector2(27, 26.5)
 shape = SubResource("RectangleShape2D_uu6iy")

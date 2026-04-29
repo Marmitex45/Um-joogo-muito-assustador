@@ -11,15 +11,21 @@ func _input(event: InputEvent) -> void:
 
 func disparar():
 	var nova_bala = projetil.instantiate()
+	
 	nova_bala.global_position = ponta_arma.global_position
+	print(ponta_arma.global_position,nova_bala.global_position)
+	nova_bala.direcao = (get_global_mouse_position() - self.global_position).normalized()
+	nova_bala.look_at(get_global_mouse_position())
 	get_tree().current_scene.add_child(nova_bala)
 
 func _physics_process(delta):
 	var direcao = Input.get_vector("Esquerda", "Direita", "Cima", "Baixo")
 	velocity = direcao * velocidade
-	move_and_slide()
+	look_at(get_global_mouse_position())
 	if direcao.x != 0:
 		$AnimatedSprite2D.flip_h = direcao.x < 0
+	move_and_slide()
+	
 func tomar_dano():
 	atualizar_coraçoes()
 	

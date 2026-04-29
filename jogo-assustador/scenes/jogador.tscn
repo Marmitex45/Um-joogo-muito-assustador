@@ -44,9 +44,6 @@ projetil = ExtResource("2_s760d")
 sprite_frames = SubResource("SpriteFrames_g1ob3")
 animation = &"Damage"
 
-[node name="Arma" parent="AnimatedSprite2D" unique_id=2026371969 instance=ExtResource("4_32758")]
-position = Vector2(78, 2)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=893049537]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_uahlj")
@@ -65,8 +62,8 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/Coraçao" unique_id=1478138515]
 texture_filter = 1
-position = Vector2(98, 69)
-scale = Vector2(6, 6)
+position = Vector2(97.5, 69)
+scale = Vector2(5.96, 6)
 texture = ExtResource("3_g1ob3")
 
 [node name="Coraçao3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=236555046]
@@ -89,4 +86,7 @@ scale = Vector2(6, 6)
 texture = ExtResource("3_g1ob3")
 
 [node name="Emissorbala" type="Marker2D" parent="." unique_id=945531631]
-position = Vector2(133, -2)
+position = Vector2(127, -2)
+
+[node name="Arma" parent="." unique_id=2026371969 instance=ExtResource("4_32758")]
+position = Vector2(78, 1)

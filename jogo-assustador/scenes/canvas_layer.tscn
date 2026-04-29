@@ -1,29 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnydctrcpm44t"]
+[gd_scene format=3 uid="uid://bnydctrcpm44t"]
 
 [ext_resource type="Script" uid="uid://dcecrtae6gih3" path="res://scripts/canvas_layer.gd" id="1_c4rma"]
 
-[node name="MenuPause" type="CanvasLayer"]
+[node name="MenuPause" type="CanvasLayer" unique_id=1482184964]
+layer = 2
 script = ExtResource("1_c4rma")
 
-[node name="Voltar" type="Button" parent="."]
-offset_left = 430.0
-offset_top = 339.0
-offset_right = 615.0
-offset_bottom = 392.0
+[node name="Voltar" type="Button" parent="." unique_id=551918341]
+offset_left = 476.0
+offset_top = 214.0
+offset_right = 661.0
+offset_bottom = 267.0
 text = "VOLTAR"
 
-[node name="Sair" type="Button" parent="."]
-offset_left = 438.0
-offset_top = 511.0
-offset_right = 617.0
-offset_bottom = 565.0
+[node name="Sair" type="Button" parent="." unique_id=173121319]
+offset_left = 475.0
+offset_top = 431.0
+offset_right = 654.0
+offset_bottom = 485.0
 text = "SAIR"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 278.0
-offset_top = 8.0
-offset_right = 753.0
-offset_bottom = 145.0
+[node name="Label" type="Label" parent="." unique_id=1287168193]
+offset_left = 344.0
+offset_top = -12.0
+offset_right = 819.0
+offset_bottom = 125.0
 theme_override_font_sizes/font_size = 100
 text = "PAUSADO"
 
