@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbt6pm8da72ux"]
+[gd_scene format=3 uid="uid://bbt6pm8da72ux"]
 
 [ext_resource type="Script" uid="uid://dfwby14hotn02" path="res://scripts/inimigo_1.gd" id="1_50o7s"]
 [ext_resource type="Texture2D" uid="uid://cmcg86atulq8g" path="res://Assets/icon.svg" id="2_34lmg"]
@@ -25,13 +25,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su1cs"]
 size = Vector2(126, 124)
 
-[node name="Inimigo1" type="CharacterBody2D"]
+[node name="Inimigo1" type="Area2D" unique_id=923064042 groups=["Inimigos"]]
 script = ExtResource("1_50o7s")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1592828212]
 sprite_frames = SubResource("SpriteFrames_pt7c7")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065691378]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_su1cs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

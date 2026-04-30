@@ -26,10 +26,18 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = direcao.x < 0
 	move_and_slide()
 	
-func tomar_dano():
+func tomar_hit():
+	PlayerData.vida -= 1
 	atualizar_coraçoes()
 	
 		
 func atualizar_coraçoes():
 	for i in range(listacoraçao.size()):
-		listacoraçao[i].visible = 1 < vida
+		if (i+1 > PlayerData.vida):
+			listacoraçao[i].visible = false
+		else:
+			listacoraçao[i].visible = true
+
+
+#func tomar_hit():
+	#self.queue_free()

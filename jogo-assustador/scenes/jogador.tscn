@@ -36,7 +36,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uahlj"]
 size = Vector2(113, 117)
 
-[node name="Jogador" type="CharacterBody2D" unique_id=1466795784]
+[node name="Jogador" type="CharacterBody2D" unique_id=1466795784 groups=["player"]]
 script = ExtResource("1_vwxko")
 projetil = ExtResource("2_s760d")
 

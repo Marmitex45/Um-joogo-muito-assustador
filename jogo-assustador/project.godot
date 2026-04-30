@@ -27,6 +27,11 @@ PlayerData="*uid://dmjqgb14v5y1l"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+Inimigos=""
+player=""
+
 [input]
 
 Cima={
